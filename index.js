@@ -4,13 +4,12 @@ const fs = require('fs');
 const AWS = require('aws-sdk');
 
 try {
-  const functionName = core.getInput('s3');
-  const package = core.getInput('package');
+  const s3 = core.getInput('s3');
   const AWS_SECRET_KEY = core.getInput('AWS_SECRET_KEY');
   const AWS_SECRET_ID = core.getInput('AWS_SECRET_ID');
   const AWS_REGION = core.getInput('AWS_REGION');
 
-  console.log(`Deploying ${functionName} from ${package}.`);
+  console.log(`Deploying ${functionName} from ${s3}.`);
 
   
   const lambda = new AWS.Lambda({
