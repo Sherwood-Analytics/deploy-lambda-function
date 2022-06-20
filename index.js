@@ -4,7 +4,7 @@ const fs = require('fs');
 const AWS = require('aws-sdk');
 
 try {
-  const functionName = core.getInput('function-name');
+  const functionName = core.getInput('s3');
   const package = core.getInput('package');
   const AWS_SECRET_KEY = core.getInput('AWS_SECRET_KEY');
   const AWS_SECRET_ID = core.getInput('AWS_SECRET_ID');
@@ -12,9 +12,7 @@ try {
 
   console.log(`Deploying ${functionName} from ${package}.`);
 
-  var zipBuffer = fs.readFileSync(`./${package}`);
-  core.debug('ZIP file put into memory buffer.');
-
+  
   const lambda = new AWS.Lambda({
       apiVersion: '2015-03-31',
       region: AWS_REGION,
@@ -28,7 +26,8 @@ try {
   const params = {
     FunctionName: functionName,
     Publish: true,
-    ZipFile: zipBuffer,
+    S3Bucket: "lambdasshwrd",
+    S3Key: s3,
   };
 
   lambda.updateFunctionCode(params, err => {
