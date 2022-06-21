@@ -11,6 +11,9 @@ inputs:
   function-name:
     description: 'Name of Lambda function'
     default: ''
+  s3:
+    description: 'S3 key'
+    default: ''
   AWS_SECRET_KEY:
     description: 'AWS secret key'
     default: ''
