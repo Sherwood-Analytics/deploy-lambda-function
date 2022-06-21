@@ -1,5 +1,5 @@
-name: 'Deploy AWS Lambda function'
-description: 'Update the code of an AWS Lambda function'
+name: 'Deploy AWS Lambda function via S3 Upload'
+description: 'Updating a function with more than 50MB is only possible through s3.'
 author: 'Yves Gurcan'
 branding:
   icon: 'layers'
