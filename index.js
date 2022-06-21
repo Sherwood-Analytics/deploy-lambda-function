@@ -5,6 +5,7 @@ const AWS = require('aws-sdk');
 
 try {
   const s3 = core.getInput('s3');
+  const functionName = core.getInput('function-name');
   const AWS_SECRET_KEY = core.getInput('AWS_SECRET_KEY');
   const AWS_SECRET_ID = core.getInput('AWS_SECRET_ID');
   const AWS_REGION = core.getInput('AWS_REGION');
