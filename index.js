@@ -26,7 +26,7 @@ try {
   const params = {
     FunctionName: functionName,
     Publish: true,
-    S3Bucket: "lambdasshwrd",
+    S3Bucket: "sherwoodapi",
     S3Key: s3,
   };
 
